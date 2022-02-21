@@ -300,7 +300,7 @@ public class DessertShop2 {
 		System.out.println("--------------------------------");
 		System.out.println();
 		boolean valid2 = false;
-
+//hello git
 		do {
 			System.out.println("Hit enter to start a new order:");
 			String next = sIn.nextLine();
