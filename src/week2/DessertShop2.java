@@ -1,9 +1,12 @@
 package week2;
 import java.util.Collections;
 import java.util.Scanner;
-
+import java.util.HashMap;
 import week2.Payable.PayType;
 public class DessertShop2 {
+
+	public static HashMap<String,Customer> CustomerDB = new HashMap<String,Customer>(); 
+
 	
 	private static DessertItem userPromptCandy() {
 		//initalization of variables
@@ -210,6 +213,88 @@ public class DessertShop2 {
 		return sundae1;	
 		}
 
+	//method for case #1
+	private static void customerList() {
+		for(String value : CustomerDB.keySet()) {
+			System.out.printf("%-14s%-10s%-12s%-15d\n", "Customer Name:",CustomerDB.get(value).getName(), "Customer ID:", CustomerDB.get(value).getID());			
+		}
+	}
+	//end of method for case #1
+	
+	//method for case #2
+	private static void customerOrderHistory() {
+		Scanner in = new Scanner(System.in);
+		System.out.println("Enter the name of the customer:");
+		String name = in.nextLine();
+		
+		for(String value : CustomerDB.keySet()) {
+			if(name.equals(CustomerDB.get(value).getName())) {
+			System.out.printf("%-14s%-10s%-12s%-15d\n", "Customer Name:",CustomerDB.get(value).getName(), "Customer ID:", CustomerDB.get(value).getID());
+			System.out.println("-----------------");
+			System.out.println("Order #:" + CustomerDB.get(value).getOrderHistory().size());
+			System.out.println(CustomerDB.get(value).getOrderHistory());
+		}
+		}
+		
+	}
+	//end of method for case #2
+	
+	//method for case #3
+	private static void bestCustomer() {
+		
+		double sum = 0;
+		int max = 0;
+
+		for(String value : CustomerDB.keySet()) {
+			
+			//for(int i = 0; i<CustomerDB.get(value).getOrderHistory().size();i++) {
+				System.out.println(CustomerDB.get(value).getID());
+				System.out.println(CustomerDB.keySet());
+				System.out.println(CustomerDB);
+				//if(CustomerDB.get(value).getOrderHistory().size()>max) {
+				
+				//}
+			}
+			//if (CustomerDB.get(value).getOrderHistory().size()>1) {
+				//System.out.println("yes");
+			//}
+		//}
+		//for(int i = 0; i<CustomerDB.get())
+		//System.out.println("The Dessert Shop's most valued customer is: "+ );
+	}
+	
+	private static void adminModule() {
+		Scanner in = new Scanner(System.in);
+		boolean done = false;
+		while (!done) {
+		   System.out.println("\n1: Shop Customer List");
+		   System.out.println("2: Customer Order History");
+		   System.out.println("3: Best Customer");
+		   System.out.println("4: Exit Admin Module");
+		   String choice = in.nextLine();
+
+		   switch (choice) {
+		   case "1":
+			   customerList();
+			   //System.out.println(customerList());
+			   break;
+		   case "2":
+			   customerOrderHistory();
+			   break;  
+		   case "3":
+			   bestCustomer();
+			   break;
+		   case "4":
+			   done = true;
+			   break;
+		}
+		
+		}
+
+	}
+	
+	
+
 	public static void main(String[] args) {
 		
 		boolean closed = false;
@@ -225,8 +310,9 @@ public class DessertShop2 {
 		     System.out.println("2: Cookie");
 		     System.out.println("3: Ice Cream");
 		     System.out.println("4: Sundae");
+		     System.out.println("5: Admin Module");
 
-		     System.out.print("\nWhat would you like to add to the order? (1-4, Enter for done): ");
+		     System.out.print("\nWhat would you like to add to the order? (1-5, Enter for done): ");
 		     choice = sIn.nextLine();
 
 		     if (choice.equals("")) {
@@ -249,6 +335,8 @@ public class DessertShop2 {
 		                    orderItem = userPromptSundae();
 		                    o1.addOrder(orderItem);
 		                    break;
+		               case "5":
+		            	   	adminModule();
 		               }//end of switch (choice)
 		          }//end of if (choice.equals(""))
 		     }//end of while (!done)
@@ -271,6 +359,26 @@ public class DessertShop2 {
 		String paymentMethod = "";
 		PayType payM = null;
 		boolean valid = false;
+		//Customer cu1 = new Customer();
+
+		//start of entering customers name and customer ID number
+		System.out.println("Enter the customer name:");
+		String customerName = sIn.nextLine();
+		if(CustomerDB.containsKey(customerName)) {
+			CustomerDB.get(customerName).addToHistory(o1);
+
+		}
+		else {
+			Customer cu1 = new Customer(customerName);
+			CustomerDB.put(customerName,cu1);
+			CustomerDB.get(customerName).addToHistory(o1);
+
+		}
+
+		
+		
+		//end of entering customers name and customer ID number
+
 		while(!valid) {
 			System.out.println("What form of payment will be used? (CASH, CARD, PHONE):");
 			paymentMethod = sIn.nextLine();
@@ -298,9 +406,18 @@ public class DessertShop2 {
 		Collections.sort(o1.getOrderList());
 		System.out.println(o1);
 		System.out.println("--------------------------------");
-		System.out.println();
+		
 		boolean valid2 = false;
-//hello git
+		
+		//Customer name and id start
+		for(String value: CustomerDB.keySet()) {
+			
+			if(customerName.equals(CustomerDB.get(value).getName())) {
+			System.out.printf("%-15s%-15s%-15s%-10s%-12s%d\n","Customer Name:",CustomerDB.get(value).getName(), "Customer ID: ",CustomerDB.get(value).getID(), "Total Orders: ", CustomerDB.get(value).getOrderHistory().size());
+			}
+		}
+		//end of name and ID of customer
+
 		do {
 			System.out.println("Hit enter to start a new order:");
 			String next = sIn.nextLine();
@@ -311,7 +428,7 @@ public class DessertShop2 {
 		while(!valid2);
 		
 		//sIn.close();
-		}
+		} //end of while loop
 		
 	}
 }

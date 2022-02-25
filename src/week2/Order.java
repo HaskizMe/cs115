@@ -75,7 +75,7 @@ public class Order implements Payable {
 		String finalOutput1_5 = String.format("$%.2f", orderCost()+orderTax());
 		String finalOutput2 = String.format("\n%s%42s%17s\n%s%46s\n", finalOutput1_2,finalOutput1_1,finalOutput1_3,finalOutput1_4,finalOutput1_5);
 		String paidfor = "--------------------------------\n";
-		paidfor += String.format("Paid for with %s", getPayType());
+		paidfor += String.format("Paid for with %s\n", getPayType());
 		return finalOutput+finalOutput2+paidfor;
 	}
 	public PayType getPayType() {
