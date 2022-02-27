@@ -15,7 +15,7 @@ class CustomerTest {
 	@Test
 	void testGetID() {
 		Customer c1 = new Customer("Bill");
-		assertEquals(c1.getID(),0);	
+		assertEquals(c1.getID(),1000);	
 		}
 
 	@Test

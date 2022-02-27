@@ -230,9 +230,12 @@ public class DessertShop2 {
 		for(String value : CustomerDB.keySet()) {
 			if(name.equals(CustomerDB.get(value).getName())) {
 			System.out.printf("%-14s%-10s%-12s%-15d\n", "Customer Name:",CustomerDB.get(value).getName(), "Customer ID:", CustomerDB.get(value).getID());
-			System.out.println("-----------------");
-			System.out.println("Order #:" + CustomerDB.get(value).getOrderHistory().size());
-			System.out.println(CustomerDB.get(value).getOrderHistory());
+			System.out.println("---------------------------");
+			for(int i = 0; i<CustomerDB.get(value).getOrderHistory().size(); i++) {
+			int c = i+1;
+			System.out.println("Order #:" + c);
+			System.out.println(CustomerDB.get(value).getOrderHistory().get(i));
+			}
 		}
 		}
 		
@@ -242,25 +245,17 @@ public class DessertShop2 {
 	//method for case #3
 	private static void bestCustomer() {
 		
-		double sum = 0;
-		int max = 0;
-
-		for(String value : CustomerDB.keySet()) {
-			
-			//for(int i = 0; i<CustomerDB.get(value).getOrderHistory().size();i++) {
-				System.out.println(CustomerDB.get(value).getID());
-				System.out.println(CustomerDB.keySet());
-				System.out.println(CustomerDB);
-				//if(CustomerDB.get(value).getOrderHistory().size()>max) {
-				
-				//}
+		int highest = 0;
+		String name = "";
+		for(String value : CustomerDB.keySet()) {	
+			if(CustomerDB.get(value).getOrderHistory().size()>highest) {
+				highest = CustomerDB.get(value).getOrderHistory().size();
 			}
-			//if (CustomerDB.get(value).getOrderHistory().size()>1) {
-				//System.out.println("yes");
-			//}
-		//}
-		//for(int i = 0; i<CustomerDB.get())
-		//System.out.println("The Dessert Shop's most valued customer is: "+ );
+			if(CustomerDB.get(value).getOrderHistory().size()==highest) {
+				name = CustomerDB.get(value).getName();
+			}
+		}
+		System.out.println("The Dessert Shop's most valued customer is: " + name);
 	}
 	
 	private static void adminModule() {
@@ -276,7 +271,6 @@ public class DessertShop2 {
 		   switch (choice) {
 		   case "1":
 			   customerList();
-			   //System.out.println(customerList());
 			   break;
 		   case "2":
 			   customerOrderHistory();
@@ -374,8 +368,6 @@ public class DessertShop2 {
 			CustomerDB.get(customerName).addToHistory(o1);
 
 		}
-
-		
 		
 		//end of entering customers name and customer ID number
 
@@ -411,7 +403,6 @@ public class DessertShop2 {
 		
 		//Customer name and id start
 		for(String value: CustomerDB.keySet()) {
-			
 			if(customerName.equals(CustomerDB.get(value).getName())) {
 			System.out.printf("%-15s%-15s%-15s%-10s%-12s%d\n","Customer Name:",CustomerDB.get(value).getName(), "Customer ID: ",CustomerDB.get(value).getID(), "Total Orders: ", CustomerDB.get(value).getOrderHistory().size());
 			}
