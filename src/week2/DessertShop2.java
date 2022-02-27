@@ -6,7 +6,7 @@ import week2.Payable.PayType;
 public class DessertShop2 {
 
 	public static HashMap<String,Customer> CustomerDB = new HashMap<String,Customer>(); 
-
+//hello
 	
 	private static DessertItem userPromptCandy() {
 		//initalization of variables
