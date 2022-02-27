@@ -7,6 +7,7 @@ public class DessertShop2 {
 
 	public static HashMap<String,Customer> CustomerDB = new HashMap<String,Customer>(); 
 //hello
+	//Okay i got this to work
 	
 	private static DessertItem userPromptCandy() {
 		//initalization of variables
