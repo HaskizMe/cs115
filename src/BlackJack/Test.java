@@ -3,8 +3,7 @@ package BlackJack;
 public class Test {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		System.out.println("Hello");
+		System.out.println("Hello World this is a test for all those that didnt believe in me");
 //sup
 	}
 }
