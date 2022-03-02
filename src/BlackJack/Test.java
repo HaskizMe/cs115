@@ -8,5 +8,6 @@ public class Test {
 		System.out.println("Congrats you did it!");
 		//hi
 		System.out.println("you dang right i did");
+		System.out.println("just checking");
 	}
 }
