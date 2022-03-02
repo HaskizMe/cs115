@@ -6,8 +6,6 @@ import week2.Payable.PayType;
 public class DessertShop2 {
 
 	public static HashMap<String,Customer> CustomerDB = new HashMap<String,Customer>(); 
-//hello
-	//Okay i got this to work
 	
 	private static DessertItem userPromptCandy() {
 		//initalization of variables
@@ -419,7 +417,6 @@ public class DessertShop2 {
 		}
 		while(!valid2);
 		
-		//sIn.close();
 		} //end of while loop
 		
 	}
