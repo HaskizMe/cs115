@@ -37,7 +37,7 @@ public abstract class PCard {
 
 	/** Returns the color of the font used for the card text. */
 	public Color getFontColor() {
-		return Color.LIGHT_GRAY;
+		return Color.BLACK;
 	}
 
 	/** Returns the color of the cards face. */
@@ -52,7 +52,7 @@ public abstract class PCard {
 
 	/** Returns the color of an 8 pixel border around the edge of the card. */
 	public Color getBorderColor() {
-		return Color.LIGHT_GRAY;
+		return Color.BLUE;
 	}
 
 	/** Returns the alternative color used on the cards background. */
