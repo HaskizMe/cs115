@@ -1,45 +1,38 @@
 package BlackJack;
 
 import java.awt.Color;
-import java.util.HashMap;
 
 import BlackJackBase.PCard;
 
 public class BJCard extends PCard {
 	//attributes
-	public static HashMap<Integer,String> cards = new HashMap<Integer,String>();
 	private int rank;
 	private int suit;
 	private boolean hidden;
-	private static void playCards() {
-		cards.put(1,"ACE");
-		cards.put(2,"TWO");
-		cards.put(3,"THREE");
-		cards.put(4,"FOUR");
-		cards.put(5,"FIVE");
-		cards.put(6,"SIX");
-		cards.put(7,"SEVEN");
-		cards.put(8,"EIGHT");
-		cards.put(9,"NINE");
-		cards.put(10,"TEN");
-		cards.put(11, "JACK");
-		cards.put(12,"KNIGHT");
-		cards.put(13,"QUEEN");
-		cards.put(14,"KING");
-		
-		cards.put(101, "SPADE");
-		cards.put(102, "HEART");
-		cards.put(103, "DIAMOND");
-		cards.put(104, "CLUB");
-	}
-
+	public static final int ACE = 1;
+	public static final int TWO = 2;
+	public static final int THREE = 3;
+	public static final int FOUR = 4;
+	public static final int FIVE = 5;
+	public static final int SIX = 6;
+	public static final int SEVEN = 7;
+	public static final int EIGHT = 8;
+	public static final int NINE = 9;
+	public static final int TEN = 10;
+	public static final int JACK = 11;
+	public static final int KNIGHT = 12;
+	public static final int QUEEN = 13;
+	public static final int KING = 14;
+	
+	public static final int SPADE = 1;
+	public static final int HEART = 2;
+	public static final int DIAMOND = 3;
+	public static final int CLUB = 4;
 	//constructor
 	public BJCard(int r, int s) {
 		rank = r;
 		suit = s;
 		hidden = false;
-		HashMap<Integer,String> cards = new HashMap<Integer,String>();
-		playCards();
 	}	
 	//methods
 	public int getRank() {

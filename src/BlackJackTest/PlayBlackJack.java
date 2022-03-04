@@ -5,7 +5,7 @@ import BlackJack.BJCard;
 public class PlayBlackJack {
 
 	public static void main(String[] args) {
-		BJCard card = new BJCard(1,1);
+		BJCard card = new BJCard(6,4);
 		CardTest.run(card);
 	}
 
