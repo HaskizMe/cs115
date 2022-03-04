@@ -5,10 +5,11 @@ import java.awt.Color;
 import BlackJackBase.PCard;
 
 public class BJCard extends PCard {
-	//attributes
+	//attributes 
 	private int rank;
 	private int suit;
 	private boolean hidden;
+	//attributes for values
 	public static final int ACE = 1;
 	public static final int TWO = 2;
 	public static final int THREE = 3;
@@ -23,7 +24,7 @@ public class BJCard extends PCard {
 	public static final int KNIGHT = 12;
 	public static final int QUEEN = 13;
 	public static final int KING = 14;
-	
+	//attributes for suits
 	public static final int SPADE = 1;
 	public static final int HEART = 2;
 	public static final int DIAMOND = 3;
