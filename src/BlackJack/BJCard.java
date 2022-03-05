@@ -48,12 +48,15 @@ public class BJCard extends PCard {
 	public void setSuit(int s) {
 		suit = s;
 	}
+	/** Sets the card to the face down state. */
 	public void hideCard() {
 		hidden = true;
 	}
+	/** Sets the card to the face up state. */
 	public void showCard() {
 		hidden = false;
 	}
+	/** Finds if the card if face-down or face-up @return <b>true</b> if the card if face down. */
 	public boolean isHidden() {
 		return hidden;
 	}

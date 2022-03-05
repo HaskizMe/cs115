@@ -6,14 +6,17 @@ public class test {
 
 	public static void main(String[] args) {
 
-		ArrayList<Integer> num = new ArrayList<Integer>();
-		System.out.println(num);
-		num.add(11);
-		System.out.println(num);
-		num.remove(num.size()-1);
-		System.out.println(num);
-		num.removeAll(num);
-		System.out.println(num.size());
+		ArrayList<String> num = new ArrayList<String>();
+		num.add("a");
+		num.add("b");
+		num.add("c");
+		
+		for(int i = 0;i<num.size();i++) {
+			for(int j = 1;j<=50;j++) {
+				System.out.println(num.get(i)+j);
+			}
+		}
+
 	}
 
 }
