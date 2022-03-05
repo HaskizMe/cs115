@@ -5,19 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 class BJCardTest {
-
-//	@Test
-//	void testHideCard() {
-//		BJCard b1 = new BJCard(1,1);
-//		verify(b1,times(1)).hideCard());
-//	}
-//
-//	@Test
-//	void testShowCard() {
-//		BJCard b1 = new BJCard(1,1);
-//		assertEquals(b1.showCard(),b1.hidden);
-//	}
-
+	
 	@Test
 	void testIsHidden() {
 		BJCard b1 = new BJCard(1,1);

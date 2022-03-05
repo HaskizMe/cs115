@@ -131,8 +131,6 @@ public class BJCard extends PCard {
 			ssuit = "\u2663";
 			break;
 		}
-						
-		
 		return srank+ssuit;
 	}
 }

@@ -15,14 +15,14 @@ public class REO {
 		System.out.println();
 		System.out.println("What would you like to do? (1-2):");
 		String choice = in.nextLine();
+		//main switch statement
 		switch (choice) {
 		case "1":
-		listingsMenu();
-		break;
+			listingsMenu();
+			break;
 		case "2":
-		bidsMenu();
-		break;
-		
+			bidsMenu();
+			break;	
 		}
 		}
 	}
@@ -56,6 +56,7 @@ public class REO {
 		}
 	}
 	//end of listingMenu() 
+	//beginning of addListingMenu()
 	private static void addListingsMenu() {
 		Scanner input = new Scanner(System.in);
 		boolean done = false;
@@ -82,13 +83,15 @@ public class REO {
 		}
 		}
 	}
+	//end of addListingsMenu()
+	//beginning of bidsMenu()
 	private static void bidsMenu() {
 		Scanner input = new Scanner(System.in);
 		boolean done = false;
 		while(!done) {
-			System.out.println("----------------------");
-			System.out.println("Bids Menu");
-			System.out.println("----------------------");
+		System.out.println("----------------------");
+		System.out.println("Bids Menu");
+		System.out.println("----------------------");
 		System.out.println("1: Add New Bid");
 		System.out.println("2: Show Existing Bids");
 		System.out.println("3: Auto Populate Bids (Dev Tool)");
@@ -110,7 +113,7 @@ public class REO {
 			done = true;
 			break;
 			}
-	
 		}
 	}
+	//end of bidsMenu()
 }
