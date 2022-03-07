@@ -124,5 +124,26 @@ public class REO {
 		Scanner input = new Scanner(System.in);
 		boolean done = false;
 		System.out.print("Please enter the street address for the residence:");
+		String address = input.nextLine();
+		System.out.print("Please enter the zip code for the residence:");
+		int zip = input.nextInt();
+		System.out.print("Please enter the number of bedrooms:");
+		int beds = input.nextInt();
+		System.out.print("Please enter the number of bathrooms:");
+		int baths = input.nextInt();
+		System.out.print("Please enter the square footage of the residence:");
+		double sqFoot = input.nextDouble();
+		System.out.print("Please enter the size of the yard in acres:");
+		double yd = input.nextDouble();
+		System.out.println();
+		System.out.println("Appraisal Price for this property is: ");
+		double appraisal = input.nextDouble();
+		
+
+
+		
+		
+		
+		
 	}
 }
