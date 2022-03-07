@@ -23,4 +23,21 @@ public class House extends Residential {
 		setAppraisalPrice((97.00*getSize())+(10000.00*getBeds())+(12000.00*getBaths())+(Math.round(yardAcres)*460000.00));
 		return appraisalPrice;
 	}
+	public String toString() {
+		
+		setListPrice(calculateAppraisalPrice()*1.1);
+		//header portion
+		String out1 = "---------------------------------------------------------------------";
+		String out1_2 = "Residence Type:";
+		String out1_3 = "Address:";
+		String out1_4 = "Zip Code:";
+		String out1_5 = "---------------------------------------------------------------------";
+		String final1 = String.format("%s\n%s%-10s%s%-20s%s%d\n%s\n",out1,out1_2,"House",out1_3,getStreetAddress(),out1_4,getZip(),out1_5);
+		String line = "-------------------------";
+		//body portion
+		String final2 = String.format("%s%.0f\n%s%d\n%s%d\n%s%.2f\n%s\n%s$%,.2f\n%s$%,.2f\n%s", "Sq Footage: ",getSize(),"Bedrooms: ",getBeds(),"Bathrooms: ",getBaths(),
+				"Yard Size (Acres): ",getYardAcres(),line,"Appraisal Price: ",this.calculateAppraisalPrice(),"List Price: ", getListPrice(),line);
+		//returning both strings
+		return final1+final2;
+	}
 }

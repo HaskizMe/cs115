@@ -88,6 +88,9 @@ public class REO {
 	private static void bidsMenu() {
 		Scanner input = new Scanner(System.in);
 		boolean done = false;
+		House h1 = new House("10341 CR 1230", 75762, 3, 2, 1800, 50.5);
+		Condo c1 = new Condo("10341 CR 1230", 75762, 3, 2, 1800, 2);
+
 		while(!done) {
 		System.out.println("----------------------");
 		System.out.println("Bids Menu");
@@ -101,10 +104,10 @@ public class REO {
 		String choice = input.nextLine();
 		switch(choice) {
 		case "1":
-			System.out.println("adding new bid");
+			System.out.println(h1);
 			break;
 		case "2":
-			System.out.println("showing bids");
+			System.out.println(c1);
 			break;
 		case "3":
 			System.out.println("dev tool");
@@ -116,4 +119,10 @@ public class REO {
 		}
 	}
 	//end of bidsMenu()
+	//beginning of add condo method
+	private static void addHouse() {
+		Scanner input = new Scanner(System.in);
+		boolean done = false;
+		System.out.print("Please enter the street address for the residence:");
+	}
 }
