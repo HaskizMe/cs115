@@ -20,12 +20,14 @@ public class House extends Residential {
 		yardAcres = ya;
 	}
 	public double calculateAppraisalPrice() {
-		setAppraisalPrice((97.00*getSize())+(10000.00*getBeds())+(12000.00*getBaths())+(Math.round(yardAcres)*460000.00));
+		//setAppraisalPrice((97.00*getSize())+(10000.00*getBeds())+(12000.00*getBaths())+(Math.round(yardAcres)*460000.00));
+		setAppraisalPrice((97.00*getSize())+(10000.00*getBeds())+(12000.00*getBaths())+(yardAcres)*460000.00);
+
 		return appraisalPrice;
 	}
 	public String toString() {
 		
-		setListPrice(calculateAppraisalPrice()*1.1);
+		//setListPrice(calculateAppraisalPrice()*1.1);
 		//header portion
 		String out1 = "---------------------------------------------------------------------";
 		String out1_2 = "Residence Type:";
