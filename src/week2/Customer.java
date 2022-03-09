@@ -7,11 +7,6 @@ public class Customer {
 	private int custID;
 	private static int nextCustID = 1000;
 	//constructors
-	public Customer() {
-		custName = "";
-		custID = nextCustID;
-		nextCustID++;
-	}
 	public Customer(String n) {
 		custName = n;
 		custID = nextCustID;

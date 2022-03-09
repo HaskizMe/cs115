@@ -74,60 +74,60 @@ public class BJCard extends PCard {
 		String srank = "";
 		String ssuit = "";
 		switch (rank) {
-		case 1 :
+		case ACE :
 			srank = "A";
 			break;
-		case 2 :
+		case TWO :
 			srank = "2";
 			break;
-		case 3 :
+		case THREE :
 			srank = "3";
 			break;
-		case 4 : 
+		case FOUR : 
 			srank = "4";
 			break;
-		case 5 :
+		case FIVE :
 			srank = "5";
 			break;
-		case 6 :
+		case SIX :
 			srank = "6";
 			break;
-		case 7 :
+		case SEVEN :
 			srank = "7";
 			break;
-		case 8 :
+		case EIGHT :
 			srank = "8";
 			break;
-		case 9 :
+		case NINE :
 			srank = "9";
 			break;
-		case 10 :
+		case TEN :
 			srank = "10";
 			break;
-		case 11 :
+		case JACK :
 			srank = "J";
 			break;
-		case 12 :
+		case KNIGHT :
 			srank = "KN";
 			break;
-		case 13 :
+		case QUEEN :
 			srank = "Q";
 			break;
-		case 14 :
+		case KING :
 			srank = "K";
 			break;
 		}		
 		switch (suit) {
-		case 1 :
+		case SPADE :
 			ssuit = "\u2660";
 			break;
-		case 2 :
+		case HEART :
 			ssuit = "\u2665";
 			break;
-		case 3 :
+		case DIAMOND :
 			ssuit = "\u2666";
 			break;
-		case 4 :
+		case CLUB :
 			ssuit = "\u2663";
 			break;
 		}
