@@ -1,4 +1,5 @@
 package RealEstate;
+import java.util.HashMap;
 import java.util.Scanner;
 public class REO {
 	
@@ -208,15 +209,21 @@ public class REO {
 		House house5 = new House("1220 Apple", 84057, 8, 7, 7900, 1);
 		house5.setListPrice(house5.calculateAppraisalPrice() * 1.1);
 		reoListings.addListing("1220 Apple", house5);
-		int currentSize = reoListings.getListings().size();
 
 		
-		System.out.println(currentSize + " residences have been added to the listings for testing purposes.");
+		System.out.println(8 + " residences have been added to the listings for testing purposes.");
 
 	}
 	private static void showListings() {
-		reoListings.getListings();
-		
+		System.out.println("Current Listings for REO:");
+		System.out.println();
+		for(int i = 0; i < reoListings.getListings().size(); i++) {
+			int b = i+1;
+			System.out.println("Listing NO. "+ b);
+			System.out.println(reoListings.getResidences().get(i));
+			System.out.println();
+			System.out.println();
 	}
 	
+}
 }

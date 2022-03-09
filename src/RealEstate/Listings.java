@@ -39,12 +39,12 @@ public class Listings implements Listable {
 
 	//Takes no arguments and returns a Collection<Residential> of values from a HashMap<String, Residential>
 	//****************************************** not sure if right *******************************
-	public Collection<Residential> getResidences() {
-		List<Residential> list = new ArrayList<Residential>();
+	public ArrayList<Residential> getResidences() {
+		ArrayList<Residential> array = new ArrayList<Residential>();
 		for (String key: listings.keySet()){  
-			list.add(listings.get(key));
+			array.add(listings.get(key));
 		}
-			return list;
+			return array;
 	}
 
 	//Takes no arguments and returns the number of listings in the HashMap<String, Residential>
