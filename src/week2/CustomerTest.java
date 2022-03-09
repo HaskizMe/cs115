@@ -22,7 +22,7 @@ class CustomerTest {
 	void testGetOrderHistory() {
 		Order o2 = new Order();
 		ArrayList<Order> a1 = new ArrayList<Order>();
-		Customer c = new Customer();
+		Customer c = new Customer("Bill");
 		a1.add(o2);
 		c.addToHistory(o2);
 		assertEquals(c.getOrderHistory(),a1);	
@@ -39,7 +39,7 @@ class CustomerTest {
 	void testAddToHistory() {
 		Order o2 = new Order();
 		ArrayList<Order> a1 = new ArrayList<Order>();
-		Customer c = new Customer();
+		Customer c = new Customer("Bill");
 		Candy c1 = new Candy("Candy Corn" , .25, .35);
 		a1.add(o2);
 		o2.addOrder(c1);

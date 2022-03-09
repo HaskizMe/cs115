@@ -43,23 +43,19 @@ public class BJHand implements PHand{
 	 *  Otherwise, Ace is valued as 1 
 	 */	
 	public int getValue() {
-		int sum = 0;
-		
+		int sum = 0;	
 		for(int i = 0;i<hand.size();i++) {
-			//if(hand.get(i).equals(hand.get(i).equals(BJCard.JACK)||hand.get(i).equals(BJCard.KNIGHT)||hand.get(i).equals(BJCard.QUEEN)||hand.get(i).equals(BJCard.KING))) {
-				hand.get(BJCard.JACK).setRank(10);
-				hand.get(BJCard.KNIGHT).setRank(10);
-				hand.get(BJCard.QUEEN).setRank(10);
-				hand.get(BJCard.KING).setRank(10);
-			
-			if(sum<=21) {
-				hand.get(BJCard.ACE).setRank(11);
+			if(hand.get(i).getRank()==BJCard.JACK||hand.get(i).getRank()==BJCard.KNIGHT||hand.get(i).getRank()==BJCard.QUEEN||hand.get(i).getRank()==BJCard.KING) {
+				hand.get(i).setRank(10);
 			}
-			else {
-				hand.get(BJCard.ACE).setRank(1);
+			if(hand.get(i).getRank()==BJCard.ACE && sum<=21) {
+				hand.get(i).setRank(11);
 			}
-			sum = sum + hand.get(i).getRank();
-			
+			if(hand.get(i).getRank()==11 && sum > 11) {
+				hand.get(i).setRank(1);
+			}
+
+			sum = sum + hand.get(i).getRank();		
 		}
 		return sum;
 		}
