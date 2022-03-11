@@ -24,7 +24,6 @@ public class Condo extends Residential {
 		return appraisalPrice;
 	}
 	public String toString() {
-		setListPrice(calculateAppraisalPrice()*1.1);
 		//header portion
 		String out1 = "---------------------------------------------------------------------";
 		String out1_2 = "Residence Type:";

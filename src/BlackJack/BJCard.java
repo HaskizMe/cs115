@@ -62,7 +62,7 @@ public class BJCard extends PCard {
 	}
 	public Color getFontColor() {
 		Color c = null;
-		if(suit==2||suit==3) {
+		if(suit==BJCard.HEART||suit==BJCard.DIAMOND) {
 			c = Color.red;
 		}
 		else {

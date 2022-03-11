@@ -19,7 +19,7 @@ public class Listings implements Listable {
 
 	//Takes a String argument and returns the Residential value for the associated String key in a HashMap<String, Residential>
 	public Residential getListing(String s) {
-		for (String key: listings.keySet()){  
+		for (String key : listings.keySet()){  
 			if(key.equals(s)) {
 				return listings.get(key);
 			}

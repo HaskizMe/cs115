@@ -31,7 +31,6 @@ public class BJHand implements PHand{
 	/** Removes and returns the card */
 	public PCard removeCard(int index) {
 		return hand.remove(index);
-		//cards.remove(cards.size()-1)
 	}
 
 

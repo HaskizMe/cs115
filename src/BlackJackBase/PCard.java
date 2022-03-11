@@ -47,7 +47,7 @@ public abstract class PCard {
 
 	/** Returns the color of the cards background. */
 	public Color getBackColor() {
-		return Color.WHITE;
+		return Color.RED;
 	}
 
 	/** Returns the color of an 8 pixel border around the edge of the card. */

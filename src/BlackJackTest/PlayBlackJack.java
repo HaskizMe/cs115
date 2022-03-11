@@ -1,34 +1,30 @@
 package BlackJackTest;
 
+import java.awt.Color;
+
 import BlackJack.BJCard;
 import BlackJack.BJDeck;
 import BlackJack.BJHand;
 import BlackJackBase.PCard;
+import BlackJackBase.PGame;
 
 public class PlayBlackJack {
 
 	public static void main(String[] args) {
-		BJCard card = new BJCard(BJCard.ACE,BJCard.HEART);
-		BJCard card1 = new BJCard(BJCard.KING,BJCard.HEART);
-		BJCard card2 = new BJCard(BJCard.KNIGHT,BJCard.HEART);
-		BJCard card3 = new BJCard(BJCard.ACE,BJCard.HEART);
 
-
-		//CardTest.run(card);
-		//System.out.println(card.getRank());
 		BJDeck d1 = new BJDeck();
 		BJHand h1 = new BJHand();
-		//DeckTest.run(d1);
-		h1.addCard(card1);
-		h1.addCard(card3);
-		h1.addCard(card2);
-		h1.addCard(card);
-		//System.out.println(h1.getSize());
-		//h1.removeCard(0);
-		//System.out.println(h1.getCard(0));
-		System.out.println(h1.getValue());
-
-		HandTest.run(d1, h1);
+		BJHand h2 = new BJHand();
+		PGame.setFont("DialogInput");
+		PGame.setButtonTextColor(Color.black);
+		PGame.setButtonHighlightColor(Color.DARK_GRAY);
+		PGame.setButtonColor(Color.WHITE);
+		PGame.setStatusTextColor(Color.WHITE);
+		PGame.setBannerTextColor(Color.WHITE);
+		PGame.setBannerColor(Color.BLACK);
+		PGame.setBackgroundColor(Color.GREEN);		
+		PGame.run(d1, h1, h2);
+		//HandTest.run(d1, h1);
 		
 	}
 
