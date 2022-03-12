@@ -11,7 +11,7 @@ import BlackJackBase.PGame;
 public class PlayBlackJack {
 
 	public static void main(String[] args) {
-
+//
 		BJDeck d1 = new BJDeck();
 		BJHand h1 = new BJHand();
 		BJHand h2 = new BJHand();
@@ -24,7 +24,7 @@ public class PlayBlackJack {
 		PGame.setBannerColor(Color.BLACK);
 		PGame.setBackgroundColor(Color.GREEN);		
 		PGame.run(d1, h1, h2);
-		//HandTest.run(d1, h1);
+//		HandTest.run(d1, h1);
 		
 	}
 
