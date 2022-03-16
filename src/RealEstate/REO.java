@@ -52,7 +52,7 @@ public class REO {
 			showListings();
 			break;
 		case "3":
-			autoPopulate();
+			autoPopulateListings();
 			break;
 		case "":
 			done = true;
@@ -106,13 +106,13 @@ public class REO {
 		String choice = input.nextLine();
 		switch(choice) {
 		case "1":
-			//System.out.println(h1);
+			addBid();
 			break;
 		case "2":
-			//System.out.println(c1);
+			showBids();
 			break;
 		case "3":
-			//autoPopulate();
+			autoPopulateBids();
 			break;
 		case "":
 			done = true;
@@ -183,8 +183,8 @@ public class REO {
 		System.out.println();		
 	}
 	//end of addCondo()
-	//beginning of autoPopulate()
-	private static void autoPopulate() {
+	//beginning of autoPopulateListings()
+	private static void autoPopulateListings() {
 		House house1 = new House("34 Elm",95129, 3, 2, 2200, .2);
 		house1.setListPrice(house1.calculateAppraisalPrice() * 1.1);
 		reoListings.addListing("34 Elm", house1);
@@ -214,6 +214,8 @@ public class REO {
 		System.out.println(8 + " residences have been added to the listings for testing purposes.");
 
 	}
+	//end of autoPopulateListings()
+	//beginning of showListings()
 	private static void showListings() {
 		System.out.println("Current Listings for REO:");
 		System.out.println();
@@ -224,6 +226,31 @@ public class REO {
 			System.out.println();
 			System.out.println();
 	}
-	
 }
-}
+	//end of showListings()
+	//beginning of addBid()
+	private static void addBid() {
+		System.out.println("Current Listings for REO:");
+		System.out.printf("%-10s%-5s\n", "NO.","Property (Bids)");
+		System.out.println("-------------------------");
+		for(String element : reoListings.getStreetAddress()) {
+			int i =1;
+			i++;
+			System.out.println(i+":"+ element);
+				
+			}
+		
+		
+	}
+	//end of addBid()
+	//beginning of showBids()
+	private static void showBids() {
+		
+	}
+	//end of showBids()
+	//beginning of autoPopulateBids()
+	private static void autoPopulateBids() {
+		
+	}
+	//end of showBids()
+}//end of REO class
