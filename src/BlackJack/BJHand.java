@@ -53,7 +53,6 @@ public class BJHand implements PHand{
 			if(hand.get(i).getRank()==11 && sum > 11) {
 				hand.get(i).setRank(1);
 			}
-
 			sum = sum + hand.get(i).getRank();		
 		}
 		return sum;

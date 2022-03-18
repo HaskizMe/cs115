@@ -1,5 +1,6 @@
 package RealEstate;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Scanner;
 public class REO {
 	
@@ -233,14 +234,13 @@ public class REO {
 		System.out.println("Current Listings for REO:");
 		System.out.printf("%-10s%-5s\n", "NO.","Property (Bids)");
 		System.out.println("-------------------------");
-		for(String element : reoListings.getStreetAddress()) {
-			int i =1;
-			i++;
+		int i = 1;
+		//printing out the addresses and numbering them
+		for(String element : reoListings.getStreetAddress()) {	
 			System.out.println(i+":"+ element);
-				
-			}
-		
-		
+			i++;
+		}
+
 	}
 	//end of addBid()
 	//beginning of showBids()
