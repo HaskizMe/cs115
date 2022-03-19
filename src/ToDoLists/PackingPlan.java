@@ -194,8 +194,14 @@ public class PackingPlan extends ToDo {
 	 * @return			void 
 	 */	
 	public void change(String item, int change) {
+		//added an if else statment to catch the negative numbers
 		int current = gear.get(item);
+		if((gear.get(item)+change)<1) {
+			gear.remove(item);
+		}
+		else {
 		gear.put(item, current + change);
+		}
 	}//end of method change(String, int)
 	
 	/**

@@ -198,6 +198,7 @@ public class Planner {
 			switch (choice) {
 				case "1":			
 					addPlan(sIn, "Packing");
+					//added a break to go back to create menu
 					break;
 				case "2":			
 					addPlan(sIn, "Shopping");
@@ -229,6 +230,7 @@ public class Planner {
 			System.out.print("Please enter the type of trip being planned: ");
 			String tripType = sIn.nextLine();			
 			int travelers = getValidInt(sIn, "Please enter the number of travelers for this trip: ", "Invalid entry.  Number of travelers must be a whole number.");
+			//Changed Destination and the tripType
 			PackingPlan packingPlan = new PackingPlan(planTitle, destination, travelers, tripType);
 			plans.add(packingPlan);
 			System.out.printf("\nThe '%s' Packing Plan has been created and is ready for update.\n",packingPlan.getTitle());
@@ -237,6 +239,7 @@ public class Planner {
 			String shoppingType = sIn.nextLine();		
 			ShoppingPlan shoppingPlan = new ShoppingPlan(planTitle, shoppingType);
 			plans.add(shoppingPlan);
+			//put planTitle instead of the toString of shoppingPlan
 			System.out.printf("\nThe '%s' Shopping Plan has been created and is ready for update.\n",planTitle);		
 
 			//System.out.printf("\nThe '%s' Shopping Plan has been created and is ready for update.\n",shoppingPlan);		
@@ -355,6 +358,8 @@ public class Planner {
 	public static void deleteItem(Scanner sIn, ToDo plan) {
 		//Get the list of items (keys) from the plan HashMap and convert the Set<String> to an array String[].
 		Set<String> itemList = plan.getItems();		//Get the Set<String> of keys from the HashMap.
+		//int setSize = itemList.size()-1;			//Find the number of items in the HashMap.
+		//Deleted the -1
 		int setSize = itemList.size();			//Find the number of items in the HashMap.
 		String[] choices = new String[setSize];		//Create a new array String[] that is the same size as the HashMap.
 		

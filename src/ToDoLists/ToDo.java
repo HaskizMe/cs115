@@ -36,6 +36,7 @@ public abstract class ToDo implements Modifiable{
 	 */
 	public ToDo() {
 		title = "";
+		//changed the nextToDoID to increment by 1
 		toDoID = nextToDoID;
 		//nextToDoID = toDoID + nextToDoID;
 		nextToDoID++;
