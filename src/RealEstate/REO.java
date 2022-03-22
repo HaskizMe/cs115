@@ -5,6 +5,10 @@ import java.util.Scanner;
 public class REO {
 	
 	static Listings reoListings = new Listings();
+	static HashMap<Integer,String> bids = new HashMap<Integer,String>();
+	static House house = new House();
+	static Condo condo = new Condo();
+	
 
 
 	public static void main(String[] args) {
@@ -231,17 +235,74 @@ public class REO {
 	//end of showListings()
 	//beginning of addBid()
 	private static void addBid() {
+		boolean done = false;
+		while(!done) {
+		Scanner input = new Scanner(System.in);
+		Scanner input2 = new Scanner(System.in);
+		House h1 = new House();
 		System.out.println("Current Listings for REO:");
 		System.out.printf("%-10s%-5s\n", "NO.","Property (Bids)");
 		System.out.println("-------------------------");
 		int i = 1;
 		//printing out the addresses and numbering them
-		for(String element : reoListings.getStreetAddress()) {	
-			System.out.println(i+":"+ element);
+		for(String element : reoListings.getStreetAddress()) {
+			System.out.println(i+":"+ element+"("+0+")");
+			bids.put(i, element);
 			i++;
+			}
+		System.out.println("ENTER:Exit back to previous menu");
+		System.out.println();
+		System.out.println("For which property would you like to add a bid?:");
+		int in = input.nextInt();
+		//System.out.println(reoListings.getListing("34 Elm"));
+		for (Integer key : bids.keySet()){  
+			if(key==in) {
+			System.out.println(reoListings.getListing(bids.get(key)));
+			System.out.println("Please enter the name of the bidder: ");
+			String name = input2.nextLine();
+			System.out.println("Please enter the new bid:");
+			double newBid = input2.nextDouble();
+			System.out.println();
+			System.out.println("New bid for property '" +bids.get(key) + "' added.");
+			house.newBid(name, newBid);
+			System.out.println(house.getBids());
+			if(reoListings.getListing(bids.get(key))==house) {
+				house.newBid(name, newBid);
+				System.out.println(house.getBids());
+			}
+			}
+			}
+		done = true;
+//		if(in==1) {
+//			
+//			bids.get()
+//		}
+//		switch (in) {
+//		case "1":	
+//			reoListings.getStreetAddress();
+//			addingBid();
+//			break;
+//		case "2":
+//			break;
+//		case "3":
+//			break;
+//		case "4":
+//			break;
+//		case "5":
+//			break;
+//		case "6":
+//			break;
+//		case "7":
+//			break;
+//		case "8":
+//			break;
+//		case "":
+//			done = true;
+//			break;
+//		}
 		}
+}
 
-	}
 	//end of addBid()
 	//beginning of showBids()
 	private static void showBids() {
@@ -251,6 +312,11 @@ public class REO {
 	//beginning of autoPopulateBids()
 	private static void autoPopulateBids() {
 		
+	}
+	private static void addingBid() {
+		//if()
+		reoListings.getListing("34 Elm");
+		System.out.println();
 	}
 	//end of showBids()
 }//end of REO class

@@ -28,7 +28,6 @@ public class Listings implements Listable {
 	}
 
 	//Takes no arguments and returns a Set<String> of keys from a HashMap<String, Residential>
-	//****************************************** not sure if right *******************************
 	public Set<String> getStreetAddress() {
 		Set<String> hashSet = new HashSet<String>();
 		for(String key : listings.keySet()) {
@@ -38,7 +37,6 @@ public class Listings implements Listable {
 	}
 
 	//Takes no arguments and returns a Collection<Residential> of values from a HashMap<String, Residential>
-	//****************************************** not sure if right *******************************
 	public ArrayList<Residential> getResidences() {
 		ArrayList<Residential> array = new ArrayList<Residential>();
 		for (String key: listings.keySet()){  
