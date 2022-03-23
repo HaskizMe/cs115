@@ -6,8 +6,8 @@ public class REO {
 	
 	static Listings reoListings = new Listings();
 	static HashMap<Integer,String> bids = new HashMap<Integer,String>();
-	static House house = new House("hey",95, 3, 2, 2200, .2);
-	static Condo condo = new Condo("3782 Market", 84066, 3, 1, 1800, 2);
+	static House house = new House("House",1, 1, 1, 1, .1);
+	static Condo condo = new Condo("Condo", 1, 1, 1, 1, 1);
 	
 
 
@@ -239,17 +239,33 @@ public class REO {
 		while(!done) {
 		Scanner input = new Scanner(System.in);
 		Scanner input2 = new Scanner(System.in);
-		House h1 = new House();
 		System.out.println("Current Listings for REO:");
 		System.out.printf("%-10s%-5s\n", "NO.","Property (Bids)");
 		System.out.println("-------------------------");
 		int i = 1;
 		//printing out the addresses and numbering them
-		for(String element : reoListings.getStreetAddress()) {
-			System.out.println(i+":"+ element+"("+0+")");
+		//cycling through Set<String> and giving us a string element which is the address
+		//for(String element : reoListings.getStreetAddress()) {
+		//printing the strings
+		System.out.println(reoListings.getResidences());
+
+		for(String element : reoListings.listings.keySet()) {
+			//now finding the residential
+					reoListings.listings.get(element);
+					if(reoListings.listings.get(element)instanceof Condo) {
+						System.out.println(i+":"+ element+"("+bids.get(element)+")");
+					}
+					if(reoListings.listings.get(element) instanceof House) {
+						System.out.println(i+":"+ element+"("+house.getBidCount()+")");
+
+					}
+				
+			//System.out.println(i+":"+ element+"("+house.getBidCount()+")");
+			//putting the number associated with its address in a HashMap<Integer,String>
 			bids.put(i, element);
 			i++;
-			}
+		
+		}
 		System.out.println("ENTER:Exit back to previous menu");
 		System.out.println();
 		System.out.println("For which property would you like to add a bid?:");
@@ -268,15 +284,12 @@ public class REO {
 			//System.out.println(house.getBids());
 			//System.out.println(reoListings.getResidences().get(5));
 			//remember to change the get to the corresponding number that was selected
-			if(reoListings.getResidences().get(5) instanceof Condo) {
-				String n = "hey";
-				double d = 33.3;
-				house.newBid(n, d);
+			if(reoListings.getResidences().get(in) instanceof Condo) {
+				house.newBid(name,newBid);
 				System.out.println("condo");
-//			}
 			}
 			else {
-			condo.newBid(name, newBid);
+			house.newBid(name, newBid);
 				System.out.println("house");
 			}
 			}
