@@ -6,8 +6,8 @@ public class REO {
 	
 	static Listings reoListings = new Listings();
 	static HashMap<Integer,String> bids = new HashMap<Integer,String>();
-	static House house = new House();
-	static Condo condo = new Condo();
+	static House house = new House("hey",95, 3, 2, 2200, .2);
+	static Condo condo = new Condo("3782 Market", 84066, 3, 1, 1800, 2);
 	
 
 
@@ -254,7 +254,8 @@ public class REO {
 		System.out.println();
 		System.out.println("For which property would you like to add a bid?:");
 		int in = input.nextInt();
-		//System.out.println(reoListings.getListing("34 Elm"));
+		//Takes in the user input and checks to see if it matches with the key integer
+		int j = 0;
 		for (Integer key : bids.keySet()){  
 			if(key==in) {
 			System.out.println(reoListings.getListing(bids.get(key)));
@@ -264,12 +265,19 @@ public class REO {
 			double newBid = input2.nextDouble();
 			System.out.println();
 			System.out.println("New bid for property '" +bids.get(key) + "' added.");
-			house.newBid(name, newBid);
-			System.out.println(house.getBids());
-			if(reoListings.getListing(bids.get(key))==house) {
-				house.newBid(name, newBid);
-				System.out.println(house.getBids());
+			//System.out.println(house.getBids());
+			//System.out.println(reoListings.getResidences().get(5));
+			//remember to change the get to the corresponding number that was selected
+			if(reoListings.getResidences().get(5) instanceof Condo) {
+				String n = "hey";
+				double d = 33.3;
+				house.newBid(n, d);
+				System.out.println("condo");
+//			}
 			}
+			else {
+			condo.newBid(name, newBid);
+				System.out.println("house");
 			}
 			}
 		done = true;
@@ -300,6 +308,9 @@ public class REO {
 //			done = true;
 //			break;
 //		}
+		}
+		//System.out.println(house.getBidCount());
+
 		}
 }
 

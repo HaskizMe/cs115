@@ -2,12 +2,12 @@ package RealEstate;
 
 public class Condo extends Residential {
 	//Attributes
-	private int floorLvl;
+	private int floorLvl = 0;
 	//Constructors
-	public Condo() {
-		super();
-		floorLvl = 0;
-	}
+//	public Condo() {
+//		super();
+//		floorLvl = 0;
+//	}
 	public Condo(String sa, int z, int bedc, int bathc, int sf, int fl) {
 		super(sa,z,bedc,bathc,sf);
 		floorLvl = fl;
