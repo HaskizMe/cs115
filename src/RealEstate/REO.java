@@ -1,17 +1,22 @@
 package RealEstate;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Random;
 import java.util.Scanner;
 public class REO {
 	
 	static Listings reoListings = new Listings();
 	static HashMap<Integer,String> bids = new HashMap<Integer,String>();
+	static HashMap<String,Integer> amountOfBids = new HashMap<String,Integer>();
 	static House house = new House("House",1, 1, 1, 1, .1);
 	static Condo condo = new Condo("Condo", 1, 1, 1, 1, 1);
 	
 
 
 	public static void main(String[] args) {
+		for(String element : reoListings.listings.keySet()) {
+		amountOfBids.put(element, 0);
+		}
 		boolean done = false;
 		Scanner in = new Scanner(System.in); 
 		while(!done) {
@@ -235,6 +240,8 @@ public class REO {
 	//end of showListings()
 	//beginning of addBid()
 	private static void addBid() {
+
+
 		boolean done = false;
 		while(!done) {
 		Scanner input = new Scanner(System.in);
@@ -243,36 +250,41 @@ public class REO {
 		System.out.printf("%-10s%-5s\n", "NO.","Property (Bids)");
 		System.out.println("-------------------------");
 		int i = 1;
+		
 		//printing out the addresses and numbering them
 		//cycling through Set<String> and giving us a string element which is the address
 		//for(String element : reoListings.getStreetAddress()) {
 		//printing the strings
-		System.out.println(reoListings.getResidences());
+		//System.out.println(reoListings.getResidences());
 
 		for(String element : reoListings.listings.keySet()) {
 			//now finding the residential
-					reoListings.listings.get(element);
-					if(reoListings.listings.get(element)instanceof Condo) {
-						System.out.println(i+":"+ element+"("+bids.get(element)+")");
-					}
-					if(reoListings.listings.get(element) instanceof House) {
-						System.out.println(i+":"+ element+"("+house.getBidCount()+")");
+					//reoListings.listings.get(element);
+			System.out.println(i+":"+ element+"("+amountOfBids.get(element)+")");
 
-					}
-				
-			//System.out.println(i+":"+ element+"("+house.getBidCount()+")");
+//					
+//					if(reoListings.listings.get(element)instanceof Condo) {
+//						System.out.println(i+":"+ element+"("+amountOfBids.get(element)+")");
+//					}
+//					if(reoListings.listings.get(element) instanceof House) {
+//						System.out.println(i+":"+ element+"("+amountOfBids.get(element)+")");
+//
+//					}
+			
 			//putting the number associated with its address in a HashMap<Integer,String>
 			bids.put(i, element);
 			i++;
 		
 		}
+		
 		System.out.println("ENTER:Exit back to previous menu");
 		System.out.println();
 		System.out.println("For which property would you like to add a bid?:");
 		int in = input.nextInt();
 		//Takes in the user input and checks to see if it matches with the key integer
 		int j = 0;
-		for (Integer key : bids.keySet()){  
+		for (Integer key : bids.keySet()){
+			int k = 1;
 			if(key==in) {
 			System.out.println(reoListings.getListing(bids.get(key)));
 			System.out.println("Please enter the name of the bidder: ");
@@ -286,22 +298,29 @@ public class REO {
 			//remember to change the get to the corresponding number that was selected
 			if(reoListings.getResidences().get(in) instanceof Condo) {
 				house.newBid(name,newBid);
+				amountOfBids.put(bids.get(key), k);
 				System.out.println("condo");
+				System.out.println(amountOfBids);
 			}
 			else {
 			house.newBid(name, newBid);
+			amountOfBids.put(bids.get(key), k);
+			System.out.println(amountOfBids);
+
 				System.out.println("house");
 			}
+			k++;
 			}
-		done = true;
+		//done = true;
+		}
+		}
 //		if(in==1) {
 //			
 //			bids.get()
 //		}
 //		switch (in) {
 //		case "1":	
-//			reoListings.getStreetAddress();
-//			addingBid();
+//			System.out.println(reoListings.getListing());
 //			break;
 //		case "2":
 //			break;
@@ -317,15 +336,15 @@ public class REO {
 //			break;
 //		case "8":
 //			break;
-//		case "":
+//		case " ":
 //			done = true;
 //			break;
 //		}
-		}
+		
 		//System.out.println(house.getBidCount());
 
 		}
-}
+//}
 
 	//end of addBid()
 	//beginning of showBids()
@@ -335,6 +354,22 @@ public class REO {
 	//end of showBids()
 	//beginning of autoPopulateBids()
 	private static void autoPopulateBids() {
+//		//Hard Coded set of names to be used as bidders
+//		String[] autoBidders= {"Patric Stewart","Walter Koenig","William Shatner","Leonard Nimoy","DeForect Kelley","James Doohan","George Takei","Majel Barrett","Nichelle Nichol","Jonathan Frank"
+//		,"Marina Sirtis","Brent Spiner","Gates McFadden","Michael Dorn","LeVar Burton","Wil Wheaton","Colm Meaney","Michelle Forbes"};
+//		//Create an object of type Random,  r
+//		Random r = new Random();
+//		//Randomly select a number between 0 and the length of the autoBidders list - 1.  This will be your random index into the array.
+//		int index = r.nextInt((autoBidders.length-1) +1);
+//		//Create a random bid amount between -10% and +10% of the Appraisal Price
+//		int maxBid = (int) res.calculateAppraisalPrice() * 1.1;
+//
+//		int minBid = (int) res.calculateAppraisalPrice() * .9;
+//
+//		int bidAmount = (int) Math.random() * ((maxBid - minBid) + 1)) + minBid;
+//
+//		//Use the random index number to select a random bidder and use the randomly generated bid amount to create a new bid.
+//		res.newBid(autoBidders[index], bidAmount);
 		
 	}
 	private static void addingBid() {
