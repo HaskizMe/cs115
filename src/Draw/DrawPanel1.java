@@ -96,22 +96,22 @@ public class DrawPanel1 extends JPanel {
 		Tree t3 = new Tree(g2, 300, 450, 1, 4, BROWN , FOREST_GREEN);
 		t3.draw();
 		
-		Tree t4 = new Tree(g2,100,200,3,2,BROWN, GREEN);
+		Tree t4 = new Tree(g2,100,200,3,2,BROWN, DARK_GREEN);
 		t4.draw();
 		
-		Tree t5 = new Tree(g2,150,100,7,6,PERU, GREEN);
+		Tree t5 = new Tree(g2,150,100,7,6,PERU, SPRING_GREEN);
 		t5.draw();
 		
 		Tree t6 = new Tree(g2,500,500,1,4,BURLYWOOD, GREEN);
 		t6.draw();
 		
-		Tree t7 = new Tree(g2,100,100,4,5,WHITE_SMOKE, GREEN);
+		Tree t7 = new Tree(g2,100,100,4,5,WHITE_SMOKE, FOREST_GREEN);
 		t7.draw();
 		
-		Tree t8 = new Tree(g2,80,70,9,2,RED, GREEN);
+		Tree t8 = new Tree(g2,80,70,9,2,RED, SPRING_GREEN);
 		t8.draw();
 		
-		Tree t9 = new Tree(g2,150,150,4,8,FIREBRICK, GREEN);
+		Tree t9 = new Tree(g2,150,150,4,8,FIREBRICK, FOREST_GREEN);
 		t9.draw();
 		
 		

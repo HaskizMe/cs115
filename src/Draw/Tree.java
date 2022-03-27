@@ -102,10 +102,8 @@ public class Tree extends LandscapeObject{
 	private void drawTrunk() {
 		trunkWidth=(int)super.getScale()*trunkWidth;
 		trunkHeight=(int)super.getScale()*trunkHeight;
-		trunkColor ="#382225";
 		g2.setColor(Color.decode(trunkColor));
 		g2.fillRect(super.currentX,super.currentY, trunkWidth, trunkHeight);
-		
 		g2.setColor(Color.black);
 		g2.setStroke(treeStroke);
 		g2.drawRect(super.currentX,super.currentY, trunkWidth, trunkHeight);
@@ -118,10 +116,8 @@ public class Tree extends LandscapeObject{
 	 * @return	void. 
 	 */
 	private void drawBranches() {
-		branchColor ="#0f6317";
 		currentX = currentX+(int)(.5*trunkWidth)-(int)(.5*branchWidth);
 		//My points for the Triangles
-
 		for(int i = 0; i<levels;i++) {
 			int[] xValues = {currentX,currentX+branchWidth,currentX+(int)(.5*branchWidth)};
 			int[] yValues = {currentY,currentY, currentY-branchHeight};

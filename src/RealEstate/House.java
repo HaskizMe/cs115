@@ -1,5 +1,6 @@
 package RealEstate;
 
+
 public class House extends Residential {
 	//Attributes
 	private double yardAcres;
@@ -11,6 +12,7 @@ public class House extends Residential {
 	public House(String sa, int z, int bedc, int bathc, int sf, double ya) {
 		super(sa,z,bedc,bathc,sf);
 		yardAcres = ya;
+
 	}
 	//Methods
 	public double getYardAcres() {

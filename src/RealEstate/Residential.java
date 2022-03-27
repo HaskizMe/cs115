@@ -53,8 +53,7 @@ public abstract class Residential extends Property implements Biddable{
 	
 	//Takes a String argument and returns the Double value for the associated String key in a HashMap<String, Double>
 	public Double getBid(String str) {
-		Double value = bids.get(str);
-		return value;
+		return bids.get(str);
 	}
 	
 	//Takes no arguments and returns a Set<String> of keys from a HashMap<String, Double>

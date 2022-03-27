@@ -44,7 +44,6 @@ public class DrawPanel extends JPanel {
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		Graphics2D g2 = (Graphics2D) g;			//Allows us to draw using both the Graphics class methods and the Graphics2D class methods
-
 		g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);	//Makes drawn shapes and fonts clearer
 		//My red rectangle
 		g2.setColor(Color.red);
@@ -58,7 +57,7 @@ public class DrawPanel extends JPanel {
 		g2.draw(rec1);
 		g2.fill(rec1);
 		g2.rotate(-35,cx,cy);
-		//my black triangle
+		//my cyan triangle
 		g2.setStroke(new BasicStroke(3));
 		int[] x_coord = {600,800,700};
 		int[] y_coord = {150,150,50};
@@ -84,6 +83,7 @@ public class DrawPanel extends JPanel {
 		g2.drawOval(1200,100,100,50);
 		g2.fillOval(1200,100,100,50);
 		//rounded rectangle	
+		g2.setStroke(new BasicStroke(15));
 		g2.setColor(Color.decode("#8017C5"));
 		g2.drawRoundRect(100, 300, 200, 50, 10, 10);
 		Rectangle2D.Double rec2 = new Rectangle2D.Double(100, 300, 200,50);
@@ -99,6 +99,8 @@ public class DrawPanel extends JPanel {
 		g2.drawOval(650,275,100,100);
 		g2.fillOval(775,275,100,100);
 		//octagon
+		g2.setStroke(new BasicStroke(4));
+
 		g2.setColor(Color.blue);
 		int[] x_coord_3 = {925,975,1000,1000,975,925,900,900};
 		int[] y_coord_3 = {300,300,325,375,400,400,375,325};
