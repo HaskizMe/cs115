@@ -87,33 +87,35 @@ public class DrawPanel1 extends JPanel {
 		g2.fillOval((-600), 350, this.getWidth() + 1200, 700);
 		
 		//DrawTree Trees
-		Tree t1 = new Tree(g2, 50, 400, 1, 3, BROWN , DARK_GREEN);
-		t1.draw();
+//		Tree t1 = new Tree(g2, 50, 400, 1, 3, BROWN , DARK_GREEN);
+//		t1.draw();
+//		
+//		Tree t2 = new Tree(g2, 200, 375, 1, 5, BROWN , GRAY);
+//		t2.draw();
+//		
+//		Tree t3 = new Tree(g2, 300, 450, 1, 4, BROWN , FOREST_GREEN);
+//		t3.draw();
+//		
+//		Tree t4 = new Tree(g2,400,400,3,2,BROWN, DARK_GREEN);
+//		t4.draw();
+//		
+//		Tree t5 = new Tree(g2,600,700,7,6,PERU, SPRING_GREEN);
+//		t5.draw();
+//		
+//		Tree t6 = new Tree(g2,770,400,1,4,BURLYWOOD, GREEN);
+//		t6.draw();
+//		
+//		Tree t7 = new Tree(g2,850,600,4,5,WHITE_SMOKE, FOREST_GREEN);
+//		t7.draw();
+//		
+//		Tree t8 = new Tree(g2,1100,700,9,2,RED, SPRING_GREEN);
+//		t8.draw();
+//		
+//		Tree t9 = new Tree(g2,150,700,4,3,FIREBRICK, FOREST_GREEN);
+//		t9.draw();
 		
-		Tree t2 = new Tree(g2, 200, 375, 1, 5, BROWN , GRAY);
-		t2.draw();
-		
-		Tree t3 = new Tree(g2, 300, 450, 1, 4, BROWN , FOREST_GREEN);
-		t3.draw();
-		
-		Tree t4 = new Tree(g2,100,200,3,2,BROWN, DARK_GREEN);
-		t4.draw();
-		
-		Tree t5 = new Tree(g2,150,100,7,6,PERU, SPRING_GREEN);
-		t5.draw();
-		
-		Tree t6 = new Tree(g2,500,500,1,4,BURLYWOOD, GREEN);
-		t6.draw();
-		
-		Tree t7 = new Tree(g2,100,100,4,5,WHITE_SMOKE, FOREST_GREEN);
-		t7.draw();
-		
-		Tree t8 = new Tree(g2,80,70,9,2,RED, SPRING_GREEN);
-		t8.draw();
-		
-		Tree t9 = new Tree(g2,150,150,4,8,FIREBRICK, FOREST_GREEN);
-		t9.draw();
-		
+		Snowman s1 = new Snowman(g2, 100, 300, 5, 4, WHITE,MAROON); 
+		s1.draw();		
 		
 		
 		

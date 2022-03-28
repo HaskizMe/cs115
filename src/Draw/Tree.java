@@ -80,8 +80,6 @@ public class Tree extends LandscapeObject{
 	 * @return	void. 
 	 */
 	public void applyScale() {
-		super.currentX=super.getStartX() *(int) super.getScale();
-		super.currentY=super.getStartY() *(int) super.getScale();
 		branchWidth = branchWidth*(int)super.getScale();
 		branchHeight = branchHeight*(int)super.getScale();
 
