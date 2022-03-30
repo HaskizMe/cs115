@@ -114,9 +114,11 @@ public class DrawPanel1 extends JPanel {
 //		Tree t9 = new Tree(g2,150,700,4,3,FIREBRICK, FOREST_GREEN);
 //		t9.draw();
 		
-		Snowman s1 = new Snowman(g2, 100, 300, 5, 4, WHITE,MAROON); 
-		s1.draw();		
+//		Snowman s1 = new Snowman(g2, 300, 500, 5, 4, WHITE,MAROON); 
+//		s1.draw();		
 		
+		Hat h1 = new Hat(g2,300,100,1,MAROON);
+		h1.draw();
 		
 		
 		//Populate the scene with your own trees here!
