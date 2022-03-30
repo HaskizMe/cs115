@@ -9,6 +9,9 @@ import java.awt.Polygon;
 import java.awt.RenderingHints;
 import java.awt.Stroke;
 import javax.swing.JPanel;
+
+import Draw.Hat.HatShape;
+
 import java.awt.geom.*;
 
 /**
@@ -76,6 +79,8 @@ public class DrawPanel1 extends JPanel {
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		Graphics2D g2 = (Graphics2D) g;			//Allows us to draw using both the Graphics class methods and the Graphics2D class methods
+		HatShape pointy = HatShape.POINTY;
+		HatShape round = HatShape.ROUND;
 
 		g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);	//Makes drawn shapes and fonts clearer
 
@@ -117,8 +122,10 @@ public class DrawPanel1 extends JPanel {
 //		Snowman s1 = new Snowman(g2, 300, 500, 5, 4, WHITE,MAROON); 
 //		s1.draw();		
 		
-		Hat h1 = new Hat(g2,300,100,1,MAROON);
+		Hat h1 = new Hat(g2,300,100,4,MAROON, MY_WHITE_SMOKE,pointy);
 		h1.draw();
+		Hat h2 = new Hat(g2,500,200,4,RED,DARK_SLATE_GRAY,round);
+		h2.draw();
 		
 		
 		//Populate the scene with your own trees here!
