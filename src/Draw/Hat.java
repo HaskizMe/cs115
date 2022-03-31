@@ -16,7 +16,6 @@ public class Hat extends LandscapeObject{
 	private String topColor; 			
 	private int hatBodyLength = 80;		
 	private int hatBodyHeight = 10;  
-	private int circleSize = 20;
 	private int topHeight = 30;
 	private int topWidth = 80;
 	private HatShape shape;
@@ -41,6 +40,7 @@ public class Hat extends LandscapeObject{
 	public void draw() {
 		applyScale();
 		drawHatBody();
+		
 		switch(shape) {
 		case POINTY:
 			drawPointyTop();

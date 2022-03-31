@@ -87,7 +87,6 @@ public class Snowman extends LandscapeObject{
 				g2.setColor(Color.orange);
 				g2.drawPolygon(nose);
 				g2.fill(nose);
-				
 				break;
 			}
 			if(i==(levels/2)-2) {

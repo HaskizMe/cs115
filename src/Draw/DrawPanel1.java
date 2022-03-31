@@ -10,6 +10,7 @@ import java.awt.RenderingHints;
 import java.awt.Stroke;
 import javax.swing.JPanel;
 
+import Draw.Flag.Position;
 import Draw.Hat.HatShape;
 
 import java.awt.geom.*;
@@ -81,6 +82,10 @@ public class DrawPanel1 extends JPanel {
 		Graphics2D g2 = (Graphics2D) g;			//Allows us to draw using both the Graphics class methods and the Graphics2D class methods
 		HatShape pointy = HatShape.POINTY;
 		HatShape round = HatShape.ROUND;
+		Position raised = Position.RAISED;
+		Position halfMast = Position.HALFMAST;
+		Position noFlag = Position.NOFLAG;
+
 
 		g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);	//Makes drawn shapes and fonts clearer
 
@@ -92,41 +97,53 @@ public class DrawPanel1 extends JPanel {
 		g2.fillOval((-600), 350, this.getWidth() + 1200, 700);
 		
 		//DrawTree Trees
-//		Tree t1 = new Tree(g2, 50, 400, 1, 3, BROWN , DARK_GREEN);
-//		t1.draw();
-//		
-//		Tree t2 = new Tree(g2, 200, 375, 1, 5, BROWN , GRAY);
-//		t2.draw();
-//		
-//		Tree t3 = new Tree(g2, 300, 450, 1, 4, BROWN , FOREST_GREEN);
-//		t3.draw();
-//		
-//		Tree t4 = new Tree(g2,400,400,3,2,BROWN, DARK_GREEN);
-//		t4.draw();
-//		
-//		Tree t5 = new Tree(g2,600,700,7,6,PERU, SPRING_GREEN);
-//		t5.draw();
-//		
-//		Tree t6 = new Tree(g2,770,400,1,4,BURLYWOOD, GREEN);
-//		t6.draw();
-//		
-//		Tree t7 = new Tree(g2,850,600,4,5,WHITE_SMOKE, FOREST_GREEN);
-//		t7.draw();
-//		
-//		Tree t8 = new Tree(g2,1100,700,9,2,RED, SPRING_GREEN);
-//		t8.draw();
-//		
-//		Tree t9 = new Tree(g2,150,700,4,3,FIREBRICK, FOREST_GREEN);
-//		t9.draw();
+		Tree t1 = new Tree(g2, 50, 400, 1, 3, BROWN , DARK_GREEN);
+		t1.draw();
 		
-//		Snowman s1 = new Snowman(g2, 300, 500, 5, 4, WHITE,MAROON); 
-//		s1.draw();		
+		Tree t2 = new Tree(g2, 200, 375, 1, 5, BROWN , GRAY);
+		t2.draw();
 		
-		Hat h1 = new Hat(g2,300,100,4,MAROON, MY_WHITE_SMOKE,pointy);
+		Tree t3 = new Tree(g2, 250, 380, 1, 4, BROWN , FOREST_GREEN);
+		t3.draw();
+		
+		Tree t4 = new Tree(g2,450,360,3,2,BROWN, DARK_GREEN);
+		t4.draw();
+		
+		Tree t5 = new Tree(g2,600,700,4,6,PERU, SPRING_GREEN);
+		t5.draw();
+		
+		Tree t6 = new Tree(g2,770,400,1,4,BURLYWOOD, GREEN);
+		t6.draw();
+		
+		Tree t7 = new Tree(g2,850,600,4,5,WHITE_SMOKE, FOREST_GREEN);
+		t7.draw();
+		
+		Tree t8 = new Tree(g2,1400,600,8,2,RED, SPRING_GREEN);
+		t8.draw();
+		
+		Tree t9 = new Tree(g2,150,700,4,3,FIREBRICK, FOREST_GREEN);
+		t9.draw();
+		
+		Snowman s1 = new Snowman(g2, 980, 300, 2, 4, GRAY,SADDLE_BROWN); 
+		s1.draw();	
+		
+		Snowman s2 = new Snowman(g2, 300, 400, 4, 4, WHITE,MAROON); 
+		s2.draw();
+		
+		Hat h1 = new Hat(g2,970,220,1,MAROON, MY_WHITE_SMOKE,pointy);
 		h1.draw();
-		Hat h2 = new Hat(g2,500,200,4,RED,DARK_SLATE_GRAY,round);
+		
+		Hat h2 = new Hat(g2,280,250,2,RED,DARK_SLATE_GRAY,round);
 		h2.draw();
 		
+		Flag f1 = new Flag(g2,510,120,2,SNOW3,MIDNIGHT_BLUE,raised);
+		f1.draw();
+		
+		Flag f2 = new Flag(g2,1100,50,3,SIENNA,RED,halfMast);
+		f2.draw();
+		
+		Flag f3 = new Flag(g2,800,150,1,PERU,RED,noFlag);
+		f3.draw();
 		
 		//Populate the scene with your own trees here!
 		
