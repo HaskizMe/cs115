@@ -14,6 +14,7 @@ import Draw.Flag.Position;
 import Draw.Hat.HatShape;
 
 import java.awt.geom.*;
+import java.util.Scanner;
 
 /**
  * Class used to create a DrawPanel where shapes will be drawn by the programmer (via code).
@@ -90,11 +91,38 @@ public class DrawPanel1 extends JPanel {
 		g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);	//Makes drawn shapes and fonts clearer
 
 		//DrawTree landscape
-		g2.setColor(Color.decode("#" + LIGHT_SKY_BLUE));
-		g2.fillRect(0,0,this.getWidth(),this.getHeight());
-		
-		g2.setColor(Color.decode("#" + LAWN_GREEN));
-		g2.fillOval((-600), 350, this.getWidth() + 1200, 700);
+		Scanner in = new Scanner(System.in);
+		System.out.println("Please choose a scene: ");
+		System.out.println("1.) Summer's Day");
+		System.out.println("2.) Winters's Day");
+		System.out.println("3.) Night Time");
+		int input = in.nextInt();
+		switch(input) {
+		case 1 :
+			g2.setColor(Color.decode("#" + LIGHT_SKY_BLUE));
+			g2.fillRect(0,0,this.getWidth(),this.getHeight());
+			
+			g2.setColor(Color.decode("#" + LAWN_GREEN));
+			g2.fillOval((-600), 350, this.getWidth() + 1200, 700);
+			break;
+		case 2 :
+			g2.setColor(Color.decode("#" + LIGHT_SKY_BLUE));
+			g2.fillRect(0,0,this.getWidth(),this.getHeight());
+			
+			g2.setColor(Color.decode("#" + WHITE));
+			g2.fillOval((-600), 350, this.getWidth() + 1200, 700);
+			break;
+		case 3 :
+			g2.setColor(Color.decode("#" + MIDNIGHT_BLUE));
+			g2.fillRect(0,0,this.getWidth(),this.getHeight());
+			
+			g2.setColor(Color.decode("#" + DARK_GREEN));
+			g2.fillOval((-600), 350, this.getWidth() + 1200, 700);
+			break;
+		default:
+			System.out.println("not valid");
+			break;
+		}
 		
 		//DrawTree Trees
 		Tree t1 = new Tree(g2, 50, 400, 1, 3, BROWN , DARK_GREEN);

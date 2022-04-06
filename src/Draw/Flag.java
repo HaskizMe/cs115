@@ -79,5 +79,3 @@ public class Flag extends LandscapeObject{
 	}
 		
 	}
-
-
